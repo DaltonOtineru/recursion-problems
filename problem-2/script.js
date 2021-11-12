@@ -1,9 +1,16 @@
 // define a variable thats holding an array of intergers
 // define a variable that contains the function of adding up the sum
-// 
+// use the .reduce method() on the array passed in
 
-let array = [2, 4, 4];
-let sum = (a, b) => a + b;
-console.log(array.reduce(sum));
+function sumArray(arr){
+    if(arr.length === 1){
+        return arr[0];
+    }
+    else {
+        return arr.pop() + sumArray(arr);
+    }
+}
 
-// Returns 10
+console.log(sumArray([1, 2, 3, 4, 5]));
+
+// Returns 15
